@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Emily Carter",
+    "role": "Associate Professor",
+    "providerType": "professor",
+    "department": "Computer Science",
+    "bio": "Researcher in HCI and software engineering. Advises students on research careers and grad school.",
+    "expertise": [
+      "research careers",
+      "graduate school",
+      "networking"
+    ],
+    "meetingFormats": [
+      "in_person",
+      "online"
+    ],
+    "locationId": 2,
+    "profileImage": ""
+  },
+  {
+    "id": 2,
+    "name": "Jordan Smith",
+    "role": "Career Advisor",
+    "providerType": "career_advisor",
+    "department": "Career Center",
+    "bio": "Helps students with resumes, interviews, and internship search strategies.",
+    "expertise": [
+      "resume review",
+      "interview preparation",
+      "internships"
+    ],
+    "meetingFormats": [
+      "online",
+      "in_person"
+    ],
+    "locationId": 3,
+    "profileImage": ""
+  },
+  {
+    "id": 3,
+    "name": "Dr. Aisha Khan",
+    "role": "Academic Advisor",
+    "providerType": "academic_advisor",
+    "department": "Mechanical Engineering",
+    "bio": "Supports academic planning and career exploration for engineering students.",
+    "expertise": [
+      "career exploration",
+      "course planning"
+    ],
+    "meetingFormats": [
+      "in_person"
+    ],
+    "locationId": 4,
+    "profileImage": ""
+  },
+  {
+    "id": 4,
+    "name": "Maya Chen",
+    "role": "Alumni Mentor",
+    "providerType": "alumni",
+    "department": "Alumni Network",
+    "bio": "Alumnus working in industry; provides networking and job search advice.",
+    "expertise": [
+      "networking",
+      "job search"
+    ],
+    "meetingFormats": [
+      "online"
+    ],
+    "profileImage": ""
+  },
+  {
+    "id": 5,
+    "name": "Carlos Ruiz",
+    "role": "Industry Mentor",
+    "providerType": "industry_mentor",
+    "department": "Software Engineering (Company)",
+    "bio": "Experienced software engineer mentoring students on internships and coding interviews.",
+    "expertise": [
+      "internships",
+      "interview preparation",
+      "resume review"
+    ],
+    "meetingFormats": [
+      "online",
+      "in_person"
+    ],
+    "locationId": 3,
+    "profileImage": ""
+  }
+]

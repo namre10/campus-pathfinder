@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "Recreational Soccer",
+    "category": "Sports",
+    "description": "A friendly student soccer community for practices, intramurals, and weekend matches.",
+    "memberCount": 84,
+    "leader": "Alex Martinez",
+    "tags": [
+      "soccer",
+      "team",
+      "fitness",
+      "outdoors"
+    ],
+    "meetingSchedule": "Tue 6:00 PM · Sat 10:00 AM",
+    "locationId": 8,
+    "activities": [
+      9
+    ],
+    "meetingFormat": "In person"
+  },
+  {
+    "id": 2,
+    "name": "Flag Football",
+    "category": "Sports",
+    "description": "Join other students for flag football practices, weekend scrimmages, and friendly competition.",
+    "memberCount": 48,
+    "leader": "Nina Patel",
+    "tags": [
+      "football",
+      "team",
+      "fitness",
+      "social"
+    ],
+    "meetingSchedule": "Wed 5:30 PM · Sun 11:00 AM",
+    "locationId": 8,
+    "activities": [
+      10
+    ],
+    "meetingFormat": "In person"
+  },
+  {
+    "id": 3,
+    "name": "AI Student Community",
+    "category": "Technology",
+    "description": "A community for students exploring AI research, projects, hackathons, and ethical applications.",
+    "memberCount": 112,
+    "leader": "Priya Sharma",
+    "tags": [
+      "coding",
+      "ai",
+      "machine learning",
+      "tech"
+    ],
+    "meetingSchedule": "Thu 7:00 PM · Fri 2:00 PM",
+    "locationId": 4,
+    "activities": [
+      11
+    ],
+    "meetingFormat": "Hybrid"
+  },
+  {
+    "id": 4,
+    "name": "Photography Club",
+    "category": "Hobby",
+    "description": "Photographers of all levels meet to share ideas, critique work, and explore campus photo walks.",
+    "memberCount": 58,
+    "leader": "Jordan Lee",
+    "tags": [
+      "photography",
+      "art",
+      "outdoors",
+      "community"
+    ],
+    "meetingSchedule": "Mon 5:30 PM · Sat 3:00 PM",
+    "locationId": 1,
+    "activities": [
+      5
+    ],
+    "meetingFormat": "In person"
+  },
+  {
+    "id": 5,
+    "name": "Hiking Club",
+    "category": "Hobby",
+    "description": "Weekly trails, weekend hikes, and nature outings for students who love exploring outdoors.",
+    "memberCount": 74,
+    "leader": "Maya Johnson",
+    "tags": [
+      "hiking",
+      "outdoors",
+      "adventure",
+      "fitness"
+    ],
+    "meetingSchedule": "Tue 4:30 PM · Sun 8:00 AM",
+    "locationId": 5,
+    "activities": [
+      6
+    ],
+    "meetingFormat": "In person"
+  },
+  {
+    "id": 6,
+    "name": "International Student Community",
+    "category": "Culture",
+    "description": "A welcoming community for international students to connect, share experiences, and celebrate culture.",
+    "memberCount": 103,
+    "leader": "Li Wei",
+    "tags": [
+      "culture",
+      "international",
+      "community",
+      "social"
+    ],
+    "meetingSchedule": "Fri 6:00 PM · Sun 2:00 PM",
+    "locationId": 3,
+    "activities": [
+      12
+    ],
+    "meetingFormat": "Hybrid"
+  },
+  {
+    "id": 7,
+    "name": "Chess Club",
+    "category": "Academic",
+    "description": "Strategic play, tournaments, and casual chess sessions for beginners and advanced players.",
+    "memberCount": 41,
+    "leader": "Derek Kim",
+    "tags": [
+      "chess",
+      "strategy",
+      "games",
+      "academic"
+    ],
+    "meetingSchedule": "Wed 6:00 PM · Sat 1:00 PM",
+    "locationId": 2,
+    "activities": [
+      7
+    ],
+    "meetingFormat": "In person"
+  },
+  {
+    "id": 8,
+    "name": "Volunteer Network",
+    "category": "Volunteering",
+    "description": "Connect with service opportunities, partner organizations, and student volunteers across campus.",
+    "memberCount": 96,
+    "leader": "Taylor Brooks",
+    "tags": [
+      "volunteering",
+      "service",
+      "community",
+      "social impact"
+    ],
+    "meetingSchedule": "Thu 5:30 PM · Sat 10:00 AM",
+    "locationId": 7,
+    "activities": [
+      8
+    ],
+    "meetingFormat": "Hybrid"
+  }
+]
