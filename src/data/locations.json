@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Ellis Library", "category": "Study", "lat": 38.944036, "lng": -92.327137, "tags": ["quiet", "good Wi-Fi", "printer available"], "rating": 4.6, "hours": "8am - 11pm" },
+  { "id": 2, "name": "Physics Building", "category": "Classroom", "lat": 38.944660, "lng": -92.325900, "tags": ["accessible", "lab"], "rating": 4.2, "hours": "8am - 6pm" },
+  { "id": 3, "name": "Student Center Cafe", "category": "Dining", "lat": 38.943450, "lng": -92.328450, "tags": ["cheap", "open late"], "rating": 4.0, "hours": "7am - 10pm" },
+  { "id": 4, "name": "Engineering Building", "category": "Classroom", "lat": 38.945100, "lng": -92.324500, "tags": ["labs", "study spots"], "rating": 4.1, "hours": "8am - 9pm" },
+  { "id": 5, "name": "Recreation Center", "category": "Recreation", "lat": 38.946000, "lng": -92.329000, "tags": ["gym", "open late"], "rating": 4.5, "hours": "6am - 12am" },
+  { "id": 6, "name": "Parking Garage A", "category": "Parking", "lat": 38.942800, "lng": -92.326800, "tags": ["visitor parking"], "rating": 3.9, "hours": "24/7" },
+  { "id": 7, "name": "Health Center", "category": "Services", "lat": 38.945800, "lng": -92.329800, "tags": ["urgent care"], "rating": 4.3, "hours": "9am - 5pm" },
+  { "id": 8, "name": "Bus Stop: Tiger Line", "category": "Transit", "lat": 38.943900, "lng": -92.326200, "tags": ["bus stop"], "rating": 4.0, "hours": "Varies" },
+  { "id": 9, "name": "Printer Lab (Student Center)", "category": "Services", "lat": 38.943650, "lng": -92.327900, "tags": ["printer", "pay-per-print"], "rating": 4.1, "hours": "8am - 10pm" },
+  { "id": 10, "name": "South Campus Library", "category": "Study", "lat": 38.942200, "lng": -92.329500, "tags": ["quiet", "group study"], "rating": 4.4, "hours": "9am - 9pm" }
+]
