@@ -1,7 +1,13 @@
 import React from 'react'
 import { CATEGORY_CONFIG } from '../utils/mapIcons'
 
-export default function MapLegend({ showEvents = true, locationCount = 0, eventCount = 0 }) {
+export default function MapLegend({
+  showEvents = true,
+  showHousing = true,
+  locationCount = 0,
+  eventCount = 0,
+  housingCount = 0,
+}) {
   const categories = Object.entries(CATEGORY_CONFIG).filter(([k]) => k !== 'default')
 
   return (
@@ -20,8 +26,14 @@ export default function MapLegend({ showEvents = true, locationCount = 0, eventC
             <span>Event ({eventCount})</span>
           </div>
         )}
+        {showHousing && (
+          <div className="map-legend-item">
+            <span className="map-legend-dot map-legend-dot--housing">🏠</span>
+            <span>Housing ({housingCount} across Columbia)</span>
+          </div>
+        )}
       </div>
-      <div className="map-legend-count">{locationCount} location{locationCount !== 1 ? 's' : ''} shown</div>
+      <div className="map-legend-count">{locationCount} campus location{locationCount !== 1 ? 's' : ''} shown</div>
     </div>
   )
 }

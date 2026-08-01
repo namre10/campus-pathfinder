@@ -65,8 +65,8 @@ export default function EventDirectory({
           breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Events' }]}
           actions={
             <>
-              <Link to="/dashboard" className="btn">My dashboard</Link>
-              <Link to="/" className="btn primary">Campus map</Link>
+              <Link to="/" className="btn">Your week</Link>
+              <Link to="/map" className="btn primary">Campus map</Link>
             </>
           }
         />
@@ -142,7 +142,7 @@ export default function EventDirectory({
               ) : (
                 <>
                   <button type="button" className="btn" onClick={() => { setChip('all'); setSearch('') }}>Clear filters</button>
-                  <EmptyStateLink to="/" primary>Browse campus map</EmptyStateLink>
+                  <EmptyStateLink to="/map" primary>Browse campus map</EmptyStateLink>
                 </>
               )
             }

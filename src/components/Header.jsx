@@ -2,11 +2,11 @@ import React, { useMemo, useState, useRef, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
 const NAV_ITEMS = [
-  { path: '/', label: 'Map', exact: true },
+  { path: '/', label: 'Home', exact: true },
+  { path: '/map', label: 'Map', exact: true },
   { path: '/events', label: 'Events' },
   { path: '/community', label: 'Community' },
   { path: '/career', label: 'Career' },
-  { path: '/dashboard', label: 'Dashboard' },
 ]
 
 function isActive(pathname, item) {
@@ -74,7 +74,7 @@ export default function Header({ query, setQuery, locations = [], onSelect, show
         <div>
           <div>Campus Pathfinder</div>
           <small style={{ display: 'block', fontSize: '0.75rem', color: 'rgba(255,255,255,0.7)' }}>
-            Mizzou Tiger Trail
+            Tiger Guide · Mizzou copilot
           </small>
         </div>
       </div>

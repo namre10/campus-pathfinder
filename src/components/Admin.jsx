@@ -12,8 +12,8 @@ export default function Admin({ tips = [], updateTip, deleteTip, locations = [] 
         <PageHeading
           title="Admin — Moderation Queue"
           description="Review and approve student-submitted location tips."
-          breadcrumbs={[{ label: 'Map', to: '/' }, { label: 'Admin' }]}
-          actions={<Link to="/" className="btn">Back to map</Link>}
+          breadcrumbs={[{ label: 'Map', to: '/map' }, { label: 'Admin' }]}
+          actions={<Link to="/map" className="btn">Back to map</Link>}
         />
 
         <div className="section-panel">

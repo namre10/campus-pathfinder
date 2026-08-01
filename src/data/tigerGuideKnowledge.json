@@ -1,0 +1,184 @@
+{
+  "topics": [
+    {
+      "id": "financial-hold",
+      "keywords": ["financial hold", "hold", "balance", "owe", "payment", "bursar", "can't register"],
+      "title": "Financial hold on your account",
+      "answer": "A financial hold usually means an outstanding balance or unpaid fee on your student account. Until it's cleared, myZou may block enrollment.",
+      "steps": [
+        "Log into myZou and check Holds on your student account.",
+        "Pay the balance or set up a payment plan with the Cashiers Office if eligible.",
+        "Allow 1–2 business days for the hold to clear after payment posts.",
+        "Confirm registration access before your enrollment appointment."
+      ],
+      "links": [
+        { "label": "View holds (MizzouOne)", "url": "https://mizzouone.missouri.edu/launch-task/all/view-registration-holds", "external": true },
+        { "label": "Cashiers / student account", "url": "https://cashiers.missouri.edu/", "external": true }
+      ]
+    },
+    {
+      "id": "advisor-hold",
+      "keywords": ["advisor hold", "advising hold", "advisor", "adviser", "meet advisor", "advising appointment"],
+      "title": "Advisor hold",
+      "answer": "An advisor hold means you need to meet with your academic advisor before you can register. This is common before each registration period.",
+      "steps": [
+        "Find your assigned advisor in myZou or your school/college advising office.",
+        "Schedule an advising appointment (many units use MU Connect scheduling).",
+        "Bring your Stellic plan or course ideas to the meeting.",
+        "After the advisor releases the hold, verify in myZou that registration is unblocked."
+      ],
+      "links": [
+        { "label": "MU Academic Advising", "url": "https://advising.missouri.edu/", "external": true },
+        { "label": "Open Stellic planner", "url": "https://stellic.missouri.edu", "external": true }
+      ]
+    },
+    {
+      "id": "registration-prep",
+      "keywords": ["registration", "enroll", "enrollment", "appointment", "register for classes", "sign up for classes"],
+      "title": "Getting ready for registration",
+      "answer": "Before your myZou enrollment window opens, most students need holds cleared, a course plan in Stellic, and their registration appointment time.",
+      "steps": [
+        "Check myZou for holds and required tasks on MizzouOne.",
+        "Build your next-semester plan in Stellic (primary + backups).",
+        "Note your enrollment appointment date and time in myZou.",
+        "Register promptly when your appointment opens — popular sections fill quickly."
+      ],
+      "links": [
+        { "label": "Stellic", "url": "https://stellic.missouri.edu", "external": true },
+        { "label": "Enrollment appointments info", "url": "https://registrar.missouri.edu/registration-classes/registration/myzou-enrollment-appointment-student-level/", "external": true }
+      ]
+    },
+    {
+      "id": "prereq-cs2270",
+      "keywords": ["cs 2270", "2270", "database", "prerequisite", "prereq", "can't take", "blocked from class", "why can't i register"],
+      "title": "Prerequisite example: CS 2270",
+      "answer": "In this prototype, CS 2270 (Database Systems) requires CS 2050 and MATH 2300 on your completed or in-progress record. Stellic enforces this during registration.",
+      "steps": [
+        "Open Stellic and search CS 2270 — check the Requirements tab.",
+        "If a prereq is in progress this semester, you may need advisor permission.",
+        "If missing a course, add the prerequisite to a future semester plan.",
+        "Ask your advisor if a substitution or exception applies to your situation."
+      ],
+      "links": [
+        { "label": "Open Stellic", "url": "https://stellic.missouri.edu", "external": true },
+        { "label": "Contact advising", "url": "https://advising.missouri.edu/contact", "external": true }
+      ]
+    },
+    {
+      "id": "change-major",
+      "keywords": ["change major", "switch major", "new major", "what if", "transfer major", "information systems", "computer science"],
+      "title": "Changing your major (prototype guidance)",
+      "answer": "Changing majors affects your degree audit in Stellic — some credits may count as electives instead of major requirements. Always talk to an advisor before switching.",
+      "steps": [
+        "Compare degree requirements in Stellic for your current vs intended major.",
+        "Meet with an advisor in the school/college you want to enter.",
+        "Ask how completed courses transfer within your new audit.",
+        "Submit any formal major-change paperwork your college requires."
+      ],
+      "links": [
+        { "label": "Stellic degree audit", "url": "https://stellic.missouri.edu", "external": true },
+        { "label": "Find your advisor", "url": "https://advising.missouri.edu/contact", "external": true }
+      ]
+    },
+    {
+      "id": "alumni-mentoring",
+      "keywords": ["alumni", "mentor", "mentorship", "talk to alum", "network", "professional", "junior", "senior", "career advice"],
+      "title": "Connecting with Mizzou alumni",
+      "answer": "Mizzou's official program is Mizzou Mentoring — students browse alumni mentor profiles and choose someone aligned with their goals. Handshake is another way to see where alumni work.",
+      "steps": [
+        "Create a profile on Mizzou Mentoring and browse mentors in your field.",
+        "Prepare 3–5 questions (internships, day-in-the-life, industry entry).",
+        "Be respectful of their time — 20–30 minute virtual chats are common.",
+        "Follow up with a thank-you and stay in touch through LinkedIn if appropriate."
+      ],
+      "links": [
+        { "label": "Mizzou Mentoring", "url": "https://mizzou.xinspire.com/programs/mizzou", "external": true },
+        { "label": "Handshake (jobs & alumni)", "url": "https://career.missouri.edu/jobs-and-internships/handshake/", "external": true }
+      ],
+      "tips": [
+        "What drew you to your current role after Mizzou?",
+        "What skills matter most in your first internship?",
+        "What would you do differently in your junior year?"
+      ]
+    },
+    {
+      "id": "internships-jobs",
+      "keywords": ["internship", "job", "hire", "handshake", "career fair", "resume", "apply"],
+      "title": "Jobs & internships at Mizzou",
+      "answer": "Handshake is Mizzou's primary platform for jobs, internships, career fairs, and employer events. The Career Center also offers Big Interview for mock interview practice.",
+      "steps": [
+        "Activate and complete your Handshake profile with an approved resume.",
+        "Set job alerts for roles that match your major and interests.",
+        "RSVP to career fairs and employer info sessions on Handshake.",
+        "Use Big Interview to practice before real interviews."
+      ],
+      "links": [
+        { "label": "Handshake", "url": "https://career.missouri.edu/jobs-and-internships/handshake/", "external": true },
+        { "label": "Interview prep (Big Interview)", "url": "https://career.missouri.edu/career-preparation/interviews/", "external": true },
+        { "label": "Career Center", "url": "https://career.missouri.edu/", "external": true }
+      ]
+    },
+    {
+      "id": "housing-offcampus",
+      "keywords": ["housing", "apartment", "rent", "off campus", "off-campus", "live", "lease", "columbia"],
+      "title": "Off-campus housing",
+      "answer": "Mizzou's official off-campus housing marketplace lists approved properties with filters and commute info. Pathfinder's map layers campus with Columbia complexes for browsing.",
+      "steps": [
+        "Browse listings on offcampus.missouri.edu with your budget and bed count.",
+        "Use Pathfinder's map to see neighborhoods and estimated walk time to campus.",
+        "Contact landlords to schedule tours.",
+        "Confirm lease dates align with the academic calendar before signing."
+      ],
+      "links": [
+        { "label": "Off-Campus Housing Marketplace", "url": "https://offcampus.missouri.edu/", "external": true },
+        { "label": "Pathfinder Columbia map", "url": "/map", "external": false }
+      ]
+    },
+    {
+      "id": "stellic-help",
+      "keywords": ["stellic", "degree plan", "degree audit", "plan courses", "graduation requirements", "audit"],
+      "title": "Using Stellic",
+      "answer": "Stellic is Mizzou's degree planning tool — it shows requirements, lets you drag courses into semesters, and flags conflicts or missing prerequisites.",
+      "steps": [
+        "Log in at stellic.missouri.edu with your Mizzou credentials.",
+        "Review your degree audit for remaining requirements.",
+        "Plan next semester with primary and backup courses.",
+        "Share your plan with your advisor before registration."
+      ],
+      "links": [
+        { "label": "Open Stellic", "url": "https://stellic.missouri.edu", "external": true }
+      ]
+    },
+    {
+      "id": "mizzouone-tasks",
+      "keywords": ["mizzouone", "required tasks", "immunization", "documents", "to-do", "task"],
+      "title": "MizzouOne required tasks",
+      "answer": "MizzouOne collects administrative tasks like immunization records and other onboarding requirements. Unfinished tasks can block registration.",
+      "steps": [
+        "Open MizzouOne and go to Required Tasks for Students.",
+        "Complete any outstanding immunization or document uploads.",
+        "Check myZou holds after submitting — processing may take a few days.",
+        "Contact the relevant office listed on the task if you're stuck."
+      ],
+      "links": [
+        { "label": "Required tasks (MizzouOne)", "url": "https://mizzouone.missouri.edu/collection/all/required-tasks-for-mizzou-students", "external": true }
+      ]
+    }
+  ],
+  "fallback": {
+    "answer": "I'm Tiger Guide — a Mizzou prototype copilot. I work best with questions about holds, registration, Stellic, jobs, alumni mentoring, and housing. For anything official, always confirm with an advisor or the relevant Mizzou office.",
+    "links": [
+      { "label": "MizzouOne", "url": "https://mizzouone.missouri.edu/", "external": true },
+      { "label": "Stellic", "url": "https://stellic.missouri.edu", "external": true },
+      { "label": "Career Center", "url": "https://career.missouri.edu/", "external": true },
+      { "label": "Academic Advising", "url": "https://advising.missouri.edu/", "external": true }
+    ]
+  },
+  "suggestedPrompts": [
+    "I have a financial hold and registration is coming up",
+    "Why can't I register for CS 2270?",
+    "How do I talk to an alumni mentor?",
+    "Where do I find internships?",
+    "Help me prepare for registration in Stellic"
+  ]
+}

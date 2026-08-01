@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import MapView from './components/MapView'
 import LocationDetail from './components/LocationDetail'
+import HousingDetail from './components/HousingDetail'
 import Admin from './components/Admin'
 import DirectionsControl from './components/DirectionsControl'
 import RouteInstructions from './components/RouteInstructions'
@@ -21,9 +22,10 @@ import CommunityProfile from './components/community/CommunityProfile'
 import MyCommunities from './components/community/MyCommunities'
 import EventDirectory from './components/events/EventDirectory'
 import EventDetail from './components/events/EventDetail'
-import Dashboard from './components/Dashboard'
+import PathfinderHome from './components/home/PathfinderHome'
 import eventsData from './data/events'
 import locationsData from './data/locations.json'
+import { getAllHousing, filterHousingByNeighborhood, getHousingNeighborhoods, COLUMBIA_CENTER } from './utils/housing'
 
 const FAVORITES_KEY = 'campus_pathfinder_favorites'
 const TIPS_KEY = 'campus_pathfinder_tips'
@@ -31,11 +33,11 @@ const SAVED_EVENTS_KEY = 'campus_pathfinder_saved_events'
 const JOINED_COMMUNITIES_KEY = 'campus_pathfinder_joined_communities'
 
 function isMapRoute(pathname) {
-  return pathname === '/' || pathname.startsWith('/location/')
+  return pathname === '/map' || pathname.startsWith('/location/') || pathname.startsWith('/housing/')
 }
 
 function isSidebarRoute(pathname) {
-  return pathname === '/' || pathname.startsWith('/location/')
+  return pathname === '/map' || pathname.startsWith('/location/') || pathname.startsWith('/housing/')
 }
 
 export default function App() {
@@ -53,6 +55,10 @@ export default function App() {
   const [events] = useState(eventsData)
   const [sidebarOpen, setSidebarOpen] = useState(() => window.innerWidth > 900)
   const [showEvents, setShowEvents] = useState(true)
+  const [showHousing, setShowHousing] = useState(true)
+  const [housing] = useState(() => getAllHousing())
+  const [housingNeighborhood, setHousingNeighborhood] = useState('All Columbia')
+  const [selectedHousingId, setSelectedHousingId] = useState(null)
   const [pickMode, setPickMode] = useState(null)
   const mapRef = useRef(null)
   const directionsRef = useRef(null)
@@ -91,8 +97,10 @@ export default function App() {
   }, [joinedCommunities])
 
   useEffect(() => {
-    const match = location.pathname.match(/^\/location\/(\d+)/)
-    setSelectedLocationId(match ? Number(match[1]) : null)
+    const locMatch = location.pathname.match(/^\/location\/(\d+)/)
+    const housingMatch = location.pathname.match(/^\/housing\/(\d+)/)
+    setSelectedLocationId(locMatch ? Number(locMatch[1]) : null)
+    setSelectedHousingId(housingMatch ? Number(housingMatch[1]) : null)
   }, [location.pathname])
 
   const filtered = locations.filter(l => {
@@ -113,12 +121,25 @@ export default function App() {
     }, 300)
   }, [navigate])
 
+  const handleSelectHousing = useCallback((item) => {
+    setSelectedHousingId(item.id)
+    setShowHousing(true)
+    if (mapRef.current?.flyTo) {
+      mapRef.current.flyTo([item.lat, item.lng], 16, { duration: 0.8 })
+    }
+    navigate(`/housing/${item.id}`)
+    setTimeout(() => {
+      const el = document.getElementById(`housing-${item.id}`)
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }, 300)
+  }, [navigate])
+
   function flyToLocation(locationId) {
     const loc = locations.find(l => l.id === locationId)
     if (loc && mapRef.current?.flyTo) {
       mapRef.current.flyTo([loc.lat, loc.lng], 18, { duration: 0.8 })
     }
-    navigate('/')
+    navigate(`/location/${locationId}`)
   }
 
   function handleGetDirections(locationId) {
@@ -212,22 +233,31 @@ export default function App() {
     }
   }
 
+  const filteredHousing = filterHousingByNeighborhood(housing, housingNeighborhood)
+  const housingNeighborhoods = getHousingNeighborhoods(housing)
+
   const mapViewProps = {
     locations: filtered,
     allLocations: locations,
     events,
-    center: [38.944, -92.327],
+    housing: filteredHousing,
+    center: [COLUMBIA_CENTER.lat, COLUMBIA_CENTER.lng],
     mapRef,
     onMarkerClick: handleSelectLocation,
     onEventClick: ev => navigate(`/events/${ev.id}`),
+    onHousingClick: handleSelectHousing,
     routeGeojson,
     selectedLocationId,
+    selectedHousingId,
     showEvents,
+    showHousing,
     onToggleEvents: () => setShowEvents(v => !v),
+    onToggleHousing: () => setShowHousing(v => !v),
     pickMode,
     onPickLocation: handlePickLocation,
     onCancelPick: () => setPickMode(null),
     locationDetailOpen: location.pathname.startsWith('/location/'),
+    housingDetailOpen: location.pathname.startsWith('/housing/'),
   }
 
   return (
@@ -259,14 +289,23 @@ export default function App() {
         {showSidebar && (
           <Sidebar
             locations={filtered}
+            housing={filteredHousing}
+            housingNeighborhoods={housingNeighborhoods}
+            housingNeighborhood={housingNeighborhood}
+            setHousingNeighborhood={setHousingNeighborhood}
+            totalHousingCount={housing.length}
             category={category}
             setCategory={setCategory}
             onSelect={handleSelectLocation}
+            onSelectHousing={handleSelectHousing}
             favorites={favorites}
             toggleFavorite={toggleFavorite}
             selectedId={selectedLocationId}
+            selectedHousingId={selectedHousingId}
             open={sidebarOpen}
             onClose={() => setSidebarOpen(false)}
+            showHousing={showHousing}
+            onHousingTabOpen={() => setShowHousing(true)}
           />
         )}
 
@@ -283,7 +322,8 @@ export default function App() {
 
           <div className="route-outlet">
             <Routes>
-            <Route path="/" element={
+            <Route path="/" element={<PathfinderHome />} />
+            <Route path="/map" element={
               <div className="map-layout">
                 <MapView {...mapViewProps} />
               </div>
@@ -301,6 +341,14 @@ export default function App() {
                   onGetDirections={handleGetDirections}
                   onSelectLocation={handleSelectLocation}
                 />
+              </div>
+            } />
+            <Route path="/housing/:id" element={
+              <div className="map-layout">
+                <MapView {...mapViewProps} />
+                <aside className="location-overlay housing-overlay">
+                  <HousingDetail overlay housingList={housing} />
+                </aside>
               </div>
             } />
 
@@ -341,14 +389,7 @@ export default function App() {
               <EventDetail savedEvents={savedEvents} toggleSavedEvent={toggleSavedEvent} onViewMap={flyToLocation} />
             } />
 
-            <Route path="/dashboard" element={
-              <Dashboard
-                savedEvents={savedEvents}
-                joinedCommunities={joinedCommunities}
-                favorites={Array.from(favorites)}
-                onViewLocation={flyToLocation}
-              />
-            } />
+            <Route path="/dashboard" element={<PathfinderHome />} />
             <Route path="/admin" element={
               <Admin tips={tips} updateTip={updateTip} deleteTip={deleteTip} locations={locations} />
             } />

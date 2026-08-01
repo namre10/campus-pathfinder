@@ -83,3 +83,49 @@ export function buildEventPopupHtml(ev, locName) {
     </div>
   `
 }
+
+export function createHousingIcon({ selected = false } = {}) {
+  const size = selected ? 36 : 30
+  const border = selected ? '3px solid #111' : '2px solid #fff'
+  const shadow = selected
+    ? '0 0 0 3px rgba(234,88,12,0.45), 0 4px 12px rgba(0,0,0,0.25)'
+    : '0 2px 8px rgba(0,0,0,0.2)'
+
+  return L.divIcon({
+    className: 'cp-housing-marker',
+    html: `<div class="cp-housing-pin${selected ? ' cp-housing-pin--selected' : ''}" style="
+      background:#ea580c;
+      color:white;
+      width:${size}px;height:${size}px;
+      border:${border};
+      border-radius:10px 10px 10px 2px;
+      box-shadow:${shadow};
+      display:flex;align-items:center;justify-content:center;
+      font-size:${selected ? 16 : 14}px;
+      transform:rotate(-4deg);
+    ">🏠</div>`,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size],
+    popupAnchor: [0, -size + 2],
+  })
+}
+
+export function buildHousingPopupHtml(housing) {
+  const walkLabel = housing.walkMinutes <= 8
+    ? `<span class="map-popup-walk map-popup-walk--near">🚶 ${housing.walkMinutes} min to campus</span>`
+    : `<span class="map-popup-walk">🚶 ${housing.walkMinutes} min to campus</span>`
+
+  return `
+    <div class="map-popup map-popup--housing">
+      <div class="map-popup-category" style="color:#ea580c">🏠 Off-campus housing</div>
+      <div class="map-popup-title">${housing.name}</div>
+      <div class="map-popup-meta">${housing.neighborhood} · ${housing.rent}</div>
+      <div class="map-popup-meta">${housing.beds}</div>
+      ${walkLabel}
+      <div class="map-popup-actions">
+        <button type="button" class="map-popup-btn" data-action="housing-details" data-housing-id="${housing.id}">View details →</button>
+        <a href="${housing.listingUrl}" target="_blank" rel="noopener noreferrer" class="map-popup-btn map-popup-btn--secondary">Mizzou listing ↗</a>
+      </div>
+    </div>
+  `
+}

@@ -10,6 +10,7 @@ export const STATIC_DATA_FILES = {
   communities: 'communities.json',
   advisors: 'advisors.json',
   availabilitySlots: 'availability-slots.json',
+  housing: 'housing.json',
 } as const
 
 export async function fetchStaticJson<T>(file: string): Promise<T> {

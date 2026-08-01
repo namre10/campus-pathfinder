@@ -39,7 +39,7 @@ export default function LocationDetail({
     <>
       {overlay && (
         <div className="location-overlay-close">
-          <button type="button" className="btn" onClick={() => navigate('/')}>✕ Close</button>
+          <button type="button" className="btn" onClick={() => navigate('/map')}>✕ Close</button>
         </div>
       )}
 

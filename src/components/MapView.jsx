@@ -3,8 +3,10 @@ import { MapContainer, TileLayer, useMap, GeoJSON } from 'react-leaflet'
 import L from 'leaflet'
 import MarkerClusterGroup from './MarkerClusterGroup'
 import EventMarkerGroup from './EventMarkerGroup'
+import HousingMarkerGroup from './HousingMarkerGroup'
 import MapLegend from './MapLegend'
 import FitMapBounds from './FitMapBounds'
+import { COLUMBIA_CENTER } from '../utils/housing'
 
 function MapRefSetter({ mapRef }) {
   const map = useMap()
@@ -47,27 +49,35 @@ function PickModeBanner({ pickMode, onCancel }) {
 export default function MapView({
   locations = [],
   events = [],
+  housing = [],
   allLocations = [],
-  center = [38.944, -92.327],
+  center = [COLUMBIA_CENTER.lat, COLUMBIA_CENTER.lng],
+  defaultZoom = 13,
   mapRef,
   onMarkerClick,
   onEventClick,
+  onHousingClick,
   routeGeojson,
   selectedLocationId = null,
+  selectedHousingId = null,
   showEvents = true,
+  showHousing = true,
   onToggleEvents,
+  onToggleHousing,
   pickMode = null,
   onPickLocation,
   onCancelPick,
   locationDetailOpen = false,
+  housingDetailOpen = false,
 }) {
   const eventCount = events.filter(ev => allLocations.some(l => l.id === ev.locationId)).length
+  const detailOpen = locationDetailOpen || housingDetailOpen
 
   return (
-    <main className={`map${pickMode ? ' map--pick-mode' : ''}${locationDetailOpen ? ' map--detail-open' : ''}`}>
+    <main className={`map${pickMode ? ' map--pick-mode' : ''}${detailOpen ? ' map--detail-open' : ''}`}>
       <MapContainer
         center={center}
-        zoom={16}
+        zoom={showHousing ? defaultZoom : 16}
         className="map-container"
         style={{ height: '100%', width: '100%' }}
       >
@@ -77,7 +87,14 @@ export default function MapView({
           attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <FitMapBounds locations={locations} selectedLocationId={selectedLocationId} />
+        <FitMapBounds
+          locations={locations}
+          extraPoints={showHousing ? housing : []}
+          selectedLocationId={selectedLocationId}
+          selectedHousingId={selectedHousingId}
+          cityWide={showHousing}
+          maxZoom={showHousing ? 13 : 17}
+        />
         <MarkerClusterGroup
           locations={locations}
           selectedLocationId={selectedLocationId}
@@ -91,6 +108,12 @@ export default function MapView({
           onEventClick={onEventClick}
           visible={showEvents}
         />
+        <HousingMarkerGroup
+          housing={housing}
+          onHousingClick={onHousingClick}
+          selectedHousingId={selectedHousingId}
+          visible={showHousing}
+        />
         {routeGeojson && (
           <GeoJSON
             data={routeGeojson}
@@ -102,11 +125,21 @@ export default function MapView({
       <PickModeBanner pickMode={pickMode} onCancel={onCancelPick} />
       <MapLegend
         showEvents={showEvents}
+        showHousing={showHousing}
         locationCount={locations.length}
         eventCount={eventCount}
+        housingCount={housing.length}
       />
-      {!locationDetailOpen && (
+      {!detailOpen && (
         <div className="map-controls">
+          <button
+            type="button"
+            className={`map-control-btn${showHousing ? ' active' : ''}`}
+            onClick={onToggleHousing}
+            title={showHousing ? 'Hide Columbia housing' : 'Show Columbia housing'}
+          >
+            🏠 Columbia
+          </button>
           <button
             type="button"
             className={`map-control-btn${showEvents ? ' active' : ''}`}

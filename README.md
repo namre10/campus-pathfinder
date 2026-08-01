@@ -2,6 +2,14 @@
 
 Frontend prototype for **University of Missouri** — a campus navigation and student life hub built with React + Vite.
 
+## Tiger Guide (AI copilot)
+
+Home page chat for Mizzou questions — holds, Stellic, housing, jobs, alumni prep, and links to official tools.
+
+**Local AI:** copy `.env.example` to `.env` and set `VITE_GEMINI_API_KEY`, or paste a key in the sidebar (free at [Google AI Studio](https://aistudio.google.com/apikey)).
+
+**Shared live demo:** see [TODO.md](./TODO.md) — add `VITE_GEMINI_API_KEY` as a GitHub Actions secret so the deployed link works for everyone.
+
 ## Live demo
 
 Once GitHub Pages is enabled: **https://namre10.github.io/campus-pathfinder/**
