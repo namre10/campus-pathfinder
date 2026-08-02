@@ -2372,6 +2372,358 @@ body {
   color: #6d28d9;
 }
 
+/* ── Tiger Guide welcome splash ── */
+body.welcome-open {
+  overflow: hidden;
+}
+
+.pathfinder-home--welcome .tiger-guide {
+  visibility: hidden;
+}
+
+.pathfinder-home:not(.pathfinder-home--welcome) .tiger-guide {
+  animation: tigerGuideReveal 0.5s ease forwards;
+}
+
+@keyframes tigerGuideReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tiger-welcome {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.tiger-welcome--exit {
+  animation: tigerWelcomeExit 0.65s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes tigerWelcomeExit {
+  to {
+    opacity: 0;
+    transform: scale(1.04);
+    filter: blur(6px);
+  }
+}
+
+.tiger-welcome-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.tiger-welcome-grid {
+  position: absolute;
+  inset: -50%;
+  background-image:
+    linear-gradient(rgba(255, 182, 18, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 182, 18, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: tigerWelcomeGridDrift 20s linear infinite;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 75%);
+}
+
+@keyframes tigerWelcomeGridDrift {
+  from { transform: translate(0, 0) rotate(0deg); }
+  to { transform: translate(24px, 24px) rotate(1deg); }
+}
+
+.tiger-welcome-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.55;
+  animation: tigerWelcomeOrbFloat 8s ease-in-out infinite;
+}
+
+.tiger-welcome-orb--1 {
+  width: 320px;
+  height: 320px;
+  background: #ffb612;
+  top: -8%;
+  left: -6%;
+}
+
+.tiger-welcome-orb--2 {
+  width: 280px;
+  height: 280px;
+  background: #f5d061;
+  bottom: -10%;
+  right: -4%;
+  animation-delay: -3s;
+}
+
+.tiger-welcome-orb--3 {
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.15);
+  top: 40%;
+  left: 55%;
+  animation-delay: -5s;
+}
+
+@keyframes tigerWelcomeOrbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(16px, -20px) scale(1.08); }
+}
+
+.tiger-welcome-content {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+  color: #fff8e5;
+}
+
+.tiger-welcome-animate {
+  opacity: 0;
+  animation: tigerWelcomeFadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes tigerWelcomeFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tiger-welcome-badge {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffb612;
+  border: 1px solid rgba(255, 182, 18, 0.35);
+  background: rgba(255, 182, 18, 0.08);
+}
+
+.tiger-welcome-logo-wrap {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tiger-welcome-logo-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 182, 18, 0.45);
+  animation: tigerWelcomeRingPulse 2.4s ease-in-out infinite;
+}
+
+.tiger-welcome-logo-ring::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 182, 18, 0.15);
+  animation: tigerWelcomeRingPulse 2.4s ease-in-out infinite reverse;
+}
+
+@keyframes tigerWelcomeRingPulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.12); opacity: 1; }
+}
+
+.tiger-welcome-logo {
+  font-size: 3rem;
+  line-height: 1;
+  animation: tigerWelcomeLogoBounce 2.4s ease-in-out infinite;
+  filter: drop-shadow(0 8px 24px rgba(255, 182, 18, 0.35));
+}
+
+@keyframes tigerWelcomeLogoBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.05); }
+}
+
+.tiger-welcome-title {
+  margin: 0 0 14px;
+  font-size: clamp(1.75rem, 5vw, 2.35rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #fff8e5 0%, #ffb612 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tiger-welcome-subtitle {
+  margin: 0 auto 28px;
+  max-width: 440px;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: rgba(255, 248, 229, 0.82);
+}
+
+.tiger-welcome-subtitle strong {
+  color: #ffb612;
+}
+
+.tiger-welcome-portals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.tiger-welcome-portal {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #fff8e5;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 182, 18, 0.25);
+  animation: tigerWelcomeFadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    tigerWelcomePortalGlow 3s ease-in-out infinite;
+}
+
+.tiger-welcome-portal:nth-child(2) { animation-delay: 1.05s, 0.5s; }
+.tiger-welcome-portal:nth-child(3) { animation-delay: 1.2s, 1s; }
+.tiger-welcome-portal:nth-child(4) { animation-delay: 1.35s, 1.5s; }
+
+@keyframes tigerWelcomePortalGlow {
+  0%, 100% { box-shadow: 0 0 0 rgba(255, 182, 18, 0); border-color: rgba(255, 182, 18, 0.25); }
+  50% { box-shadow: 0 0 20px rgba(255, 182, 18, 0.2); border-color: rgba(255, 182, 18, 0.55); }
+}
+
+.tiger-welcome-hub {
+  position: relative;
+  height: 36px;
+  margin: 4px auto 24px;
+}
+
+.tiger-welcome-hub-core {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1a1408;
+  background: #ffb612;
+  box-shadow: 0 0 32px rgba(255, 182, 18, 0.45);
+  animation: tigerWelcomeHubPulse 2s ease-in-out infinite;
+}
+
+@keyframes tigerWelcomeHubPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 24px rgba(255, 182, 18, 0.35); }
+  50% { transform: scale(1.06); box-shadow: 0 0 40px rgba(255, 182, 18, 0.55); }
+}
+
+.tiger-welcome-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.tiger-welcome-cta {
+  min-width: 200px;
+  padding: 14px 28px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 8px 32px rgba(255, 182, 18, 0.35);
+  animation: tigerWelcomeCtaShine 2.5s ease-in-out infinite;
+}
+
+@keyframes tigerWelcomeCtaShine {
+  0%, 100% { box-shadow: 0 8px 32px rgba(255, 182, 18, 0.35); }
+  50% { box-shadow: 0 8px 40px rgba(255, 182, 18, 0.55); }
+}
+
+.tiger-welcome-skip {
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  color: rgba(255, 248, 229, 0.5);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tiger-welcome-skip:hover {
+  color: rgba(255, 248, 229, 0.85);
+}
+
+.tiger-welcome-footnote {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 248, 229, 0.45);
+}
+
+@media (max-width: 480px) {
+  .tiger-welcome {
+    padding: 20px 16px;
+  }
+
+  .tiger-welcome-portals {
+    gap: 8px;
+  }
+
+  .tiger-welcome-portal {
+    font-size: 0.72rem;
+    padding: 6px 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tiger-welcome-animate,
+  .tiger-welcome-logo,
+  .tiger-welcome-logo-ring,
+  .tiger-welcome-portal,
+  .tiger-welcome-hub-core,
+  .tiger-welcome-cta,
+  .tiger-welcome-grid,
+  .tiger-welcome-orb {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .tiger-welcome--exit {
+    animation-duration: 0.2s;
+  }
+}
+
 /* ── Tiger Guide chat ── */
 .pathfinder-home--guide {
   padding: 0;
