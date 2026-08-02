@@ -1,5 +1,6 @@
 import React, { useMemo, useState, useRef, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { welcomeNavState } from '../utils/welcomeNav'
 
 const NAV_ITEMS = [
   { path: '/', label: 'Home', exact: true },
@@ -67,9 +68,16 @@ export default function Header({ query, setQuery, locations = [], onSelect, show
     )
   }
 
+  function goHomeWithWelcome() {
+    navigate('/', { state: welcomeNavState() })
+  }
+
   return (
     <header className="header">
-      <div className="brand" onClick={() => navigate('/')}>
+      <div className="brand" onClick={goHomeWithWelcome} role="button" tabIndex={0}
+        onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goHomeWithWelcome() } }}
+        aria-label="Campus Pathfinder home — show welcome"
+      >
         <span className="brand-mark">🐯</span>
         <div>
           <div>Campus Pathfinder</div>
