@@ -6,6 +6,10 @@ import { formatDistance } from '../utils/geo'
 export default function HousingDetail({
   housingList = [],
   overlay = false,
+  housingFavorites = new Set(),
+  toggleHousingFavorite,
+  housingCompareIds = [],
+  toggleHousingCompare,
 }) {
   const { id } = useParams()
   const navigate = useNavigate()
@@ -31,6 +35,9 @@ export default function HousingDetail({
     : housing.walkMinutes <= 20
       ? 'housing-commute-pill'
       : 'housing-commute-pill housing-commute-pill--far'
+
+  const isFavorite = housingFavorites.has(housing.id)
+  const isCompare = housingCompareIds.includes(housing.id)
 
   return (
     <>
@@ -74,6 +81,20 @@ export default function HousingDetail({
         </a>
         <button type="button" className="btn" onClick={shareLink}>
           {copied ? 'Link copied!' : 'Share'}
+        </button>
+        <button
+          type="button"
+          className={`btn${isFavorite ? ' primary' : ''}`}
+          onClick={() => toggleHousingFavorite?.(housing.id)}
+        >
+          {isFavorite ? '♥ Saved' : '♡ Save'}
+        </button>
+        <button
+          type="button"
+          className={`btn${isCompare ? ' primary' : ''}`}
+          onClick={() => toggleHousingCompare?.(housing.id)}
+        >
+          {isCompare ? '⇄ Comparing' : '⇄ Compare'}
         </button>
       </div>
 

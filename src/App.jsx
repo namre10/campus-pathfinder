@@ -11,6 +11,8 @@ import DirectionsControl from './components/DirectionsControl'
 import RouteInstructions from './components/RouteInstructions'
 import NotFound from './components/NotFound'
 
+import InternshipTimeline from './components/career/InternshipTimeline'
+import MentorQuestionBuilder from './components/career/MentorQuestionBuilder'
 import CareerAdvisingHome from './components/career/CareerAdvisingHome'
 import AdvisorDirectory from './components/career/AdvisorDirectory'
 import AdvisorProfile from './components/career/AdvisorProfile'
@@ -23,9 +25,11 @@ import MyCommunities from './components/community/MyCommunities'
 import EventDirectory from './components/events/EventDirectory'
 import EventDetail from './components/events/EventDetail'
 import PathfinderHome from './components/home/PathfinderHome'
+import { useToast } from './context/ToastContext'
 import eventsData from './data/events'
 import locationsData from './data/locations.json'
-import { getAllHousing, filterHousingByNeighborhood, getHousingNeighborhoods, COLUMBIA_CENTER } from './utils/housing'
+import { getAllHousing, filterHousingByNeighborhood, filterHousingAdvanced, getHousingNeighborhoods, parseHousingMapSearch, COLUMBIA_CENTER } from './utils/housing'
+import { getHousingFavorites, toggleHousingFavorite as toggleHousingFavoriteStorage } from './utils/housingFavorites'
 
 const FAVORITES_KEY = 'campus_pathfinder_favorites'
 const TIPS_KEY = 'campus_pathfinder_tips'
@@ -58,12 +62,21 @@ export default function App() {
   const [showHousing, setShowHousing] = useState(true)
   const [housing] = useState(() => getAllHousing())
   const [housingNeighborhood, setHousingNeighborhood] = useState('All Columbia')
+  const [housingMaxRent, setHousingMaxRent] = useState('')
+  const [housingMinBeds, setHousingMinBeds] = useState('')
+  const [housingMaxWalk, setHousingMaxWalk] = useState('')
+  const [housingFavoritesOnly, setHousingFavoritesOnly] = useState(false)
+  const [housingFavorites, setHousingFavorites] = useState(() => new Set(getHousingFavorites()))
+  const [housingCompareIds, setHousingCompareIds] = useState([])
+  const [sidebarHousingTab, setSidebarHousingTab] = useState(false)
+  const [sidebarSavedTabPulse, setSidebarSavedTabPulse] = useState(0)
   const [selectedHousingId, setSelectedHousingId] = useState(null)
   const [pickMode, setPickMode] = useState(null)
   const mapRef = useRef(null)
   const directionsRef = useRef(null)
   const navigate = useNavigate()
   const location = useLocation()
+  const { showToast } = useToast()
 
   const onMap = isMapRoute(location.pathname)
   const showSidebar = isSidebarRoute(location.pathname)
@@ -102,6 +115,22 @@ export default function App() {
     setSelectedLocationId(locMatch ? Number(locMatch[1]) : null)
     setSelectedHousingId(housingMatch ? Number(housingMatch[1]) : null)
   }, [location.pathname])
+
+  useEffect(() => {
+    if (!location.pathname.startsWith('/map') && !location.pathname.startsWith('/housing')) return
+    const params = parseHousingMapSearch(location.search)
+    if (params.housing) setShowHousing(true)
+    if (params.tab === 'housing') setSidebarHousingTab(true)
+    if (params.neighborhood) setHousingNeighborhood(params.neighborhood)
+    if (params.maxRent) setHousingMaxRent(String(params.maxRent))
+    if (params.minBeds) setHousingMinBeds(String(params.minBeds))
+    if (params.maxWalk) setHousingMaxWalk(String(params.maxWalk))
+    if (params.favorites) {
+      setHousingFavoritesOnly(true)
+      setSidebarHousingTab(true)
+      setSidebarSavedTabPulse(p => p + 1)
+    }
+  }, [location.pathname, location.search])
 
   const filtered = locations.filter(l => {
     const matchesQuery = query.trim() === '' || l.name.toLowerCase().includes(query.toLowerCase()) || l.tags.join(' ').toLowerCase().includes(query.toLowerCase())
@@ -233,7 +262,41 @@ export default function App() {
     }
   }
 
-  const filteredHousing = filterHousingByNeighborhood(housing, housingNeighborhood)
+  function toggleHousingFavorite(id) {
+    const wasSaved = housingFavorites.has(id)
+    const item = housing.find(h => h.id === id)
+    const next = toggleHousingFavoriteStorage(id)
+    setHousingFavorites(new Set(next))
+    if (wasSaved) {
+      showToast(`Removed "${item?.name ?? 'apartment'}" from saved`, 'info')
+    } else {
+      setSidebarSavedTabPulse(p => p + 1)
+      showToast(`Saved "${item?.name ?? 'apartment'}" — open ♥ Saved tab in the list`, 'success')
+    }
+  }
+
+  function toggleHousingCompare(id) {
+    setHousingCompareIds(prev => {
+      if (prev.includes(id)) return prev.filter(x => x !== id)
+      if (prev.length >= 3) return [...prev.slice(1), id]
+      return [...prev, id]
+    })
+  }
+
+  const filteredHousing = filterHousingAdvanced(
+    filterHousingByNeighborhood(housing, housingNeighborhood),
+    {
+      maxRent: housingMaxRent ? parseInt(housingMaxRent, 10) : null,
+      minBeds: housingMinBeds ? parseInt(housingMinBeds, 10) : null,
+      maxWalk: housingMaxWalk ? parseInt(housingMaxWalk, 10) : null,
+      favoritesOnly: housingFavoritesOnly,
+      favoriteIds: housingFavorites,
+    }
+  )
+  const housingCompareItems = housingCompareIds
+    .map(id => housing.find(h => h.id === id))
+    .filter(Boolean)
+  const savedHousingItems = housing.filter(h => housingFavorites.has(h.id))
   const housingNeighborhoods = getHousingNeighborhoods(housing)
 
   const mapViewProps = {
@@ -290,9 +353,26 @@ export default function App() {
           <Sidebar
             locations={filtered}
             housing={filteredHousing}
+            savedHousingItems={savedHousingItems}
             housingNeighborhoods={housingNeighborhoods}
             housingNeighborhood={housingNeighborhood}
             setHousingNeighborhood={setHousingNeighborhood}
+            housingMaxRent={housingMaxRent}
+            setHousingMaxRent={setHousingMaxRent}
+            housingMinBeds={housingMinBeds}
+            setHousingMinBeds={setHousingMinBeds}
+            housingMaxWalk={housingMaxWalk}
+            setHousingMaxWalk={setHousingMaxWalk}
+            housingFavoritesOnly={housingFavoritesOnly}
+            setHousingFavoritesOnly={setHousingFavoritesOnly}
+            housingFavorites={housingFavorites}
+            toggleHousingFavorite={toggleHousingFavorite}
+            housingCompareIds={housingCompareIds}
+            toggleHousingCompare={toggleHousingCompare}
+            housingCompareItems={housingCompareItems}
+            onClearHousingCompare={() => setHousingCompareIds([])}
+            initialHousingTab={sidebarHousingTab}
+            savedTabPulse={sidebarSavedTabPulse}
             totalHousingCount={housing.length}
             category={category}
             setCategory={setCategory}
@@ -347,12 +427,21 @@ export default function App() {
               <div className="map-layout">
                 <MapView {...mapViewProps} />
                 <aside className="location-overlay housing-overlay">
-                  <HousingDetail overlay housingList={housing} />
+                  <HousingDetail
+                    overlay
+                    housingList={housing}
+                    housingFavorites={housingFavorites}
+                    toggleHousingFavorite={toggleHousingFavorite}
+                    housingCompareIds={housingCompareIds}
+                    toggleHousingCompare={toggleHousingCompare}
+                  />
                 </aside>
               </div>
             } />
 
             <Route path="/career" element={<CareerAdvisingHome />} />
+            <Route path="/career/timeline" element={<InternshipTimeline />} />
+            <Route path="/career/mentor-questions" element={<MentorQuestionBuilder />} />
             <Route path="/career/directory" element={<AdvisorDirectory />} />
             <Route path="/career/advisor/:id" element={
               <AdvisorProfile onViewLocation={flyToLocation} />

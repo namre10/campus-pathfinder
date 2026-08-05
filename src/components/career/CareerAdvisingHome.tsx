@@ -31,15 +31,40 @@ export default function CareerAdvisingHome() {
       <div className="content-panel">
         <PageHeading
           title="Career Advising"
-          description="Connect with professors, career advisors, and mentors — book a session to get guidance on your path."
+          description="Your College to Career hub — timeline, mentor prep, and advisor booking connected to Handshake and Mizzou Mentoring."
           breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Career' }]}
           actions={
             <>
-              <Link to="/career/directory" className="btn primary">Browse advisors</Link>
-              <Link to="/career/my-meetings" className="btn">My meetings</Link>
+              <Link to="/career/timeline" className="btn primary">Career timeline</Link>
+              <Link to="/career/mentor-questions" className="btn">Mentor questions</Link>
+              <Link to="/career/directory" className="btn">Browse advisors</Link>
             </>
           }
         />
+
+        <div className="topic-grid career-bundle-grid">
+          <Link to="/career/timeline" className="topic-card topic-card--featured">
+            <span className="topic-icon">🗓️</span>
+            <div>
+              <strong>Internship timeline</strong>
+              <p>Year-by-year checklist with links to Handshake, Career Center, and mentors.</p>
+            </div>
+          </Link>
+          <Link to="/career/mentor-questions" className="topic-card topic-card--featured">
+            <span className="topic-icon">💬</span>
+            <div>
+              <strong>Mentor question builder</strong>
+              <p>Generate 5 questions before your Mizzou Mentoring conversation.</p>
+            </div>
+          </Link>
+          <Link to="/" className="topic-card">
+            <span className="topic-icon">🐯</span>
+            <div>
+              <strong>Tiger Guide</strong>
+              <p>Ask about internships and careers — set your profile on Home.</p>
+            </div>
+          </Link>
+        </div>
 
         <div className="event-stats">
           <div className="event-stat">

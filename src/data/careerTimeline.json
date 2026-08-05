@@ -1,0 +1,107 @@
+{
+  "years": [
+    {
+      "id": "freshman",
+      "label": "Freshman",
+      "summary": "Explore campus, build foundations, and learn what resources exist.",
+      "steps": [
+        {
+          "title": "Visit the Career Center",
+          "detail": "Introduce yourself to career services — they help all years, not just seniors.",
+          "links": [{ "label": "MU Career Center", "url": "https://career.missouri.edu/", "external": true }]
+        },
+        {
+          "title": "Join a club related to your field",
+          "detail": "Employers notice early involvement — check MU Engage for student orgs.",
+          "links": [{ "label": "MU Engage", "url": "https://engage.missouri.edu/", "external": true }]
+        },
+        {
+          "title": "Create a draft Handshake profile",
+          "detail": "Even as a freshman, a basic profile helps you discover events and employers on campus.",
+          "links": [{ "label": "Handshake", "url": "https://career.missouri.edu/jobs-and-internships/handshake/", "external": true }]
+        }
+      ]
+    },
+    {
+      "id": "sophomore",
+      "label": "Sophomore",
+      "summary": "Start building experience and relationships that lead to internships.",
+      "steps": [
+        {
+          "title": "Complete your Handshake profile + resume",
+          "detail": "Upload a resume and set job interests so employers can find you.",
+          "links": [{ "label": "Handshake", "url": "https://career.missouri.edu/jobs-and-internships/handshake/", "external": true }]
+        },
+        {
+          "title": "Attend a career fair or employer info session",
+          "detail": "RSVP on Handshake — even listening sessions teach you what companies want.",
+          "links": [{ "label": "Career fairs", "url": "https://career.missouri.edu/events/", "external": true }]
+        },
+        {
+          "title": "Browse alumni mentors in your field",
+          "detail": "Mizzou Mentoring lets you choose someone aligned with your goals — start with one conversation.",
+          "links": [{ "label": "Mizzou Mentoring", "url": "https://mizzou.xinspire.com/programs/mizzou", "external": true }]
+        },
+        {
+          "title": "Use Tiger Guide mentor question builder",
+          "detail": "Prepare 5 thoughtful questions before your first mentor chat.",
+          "links": [{ "label": "Mentor questions", "url": "/career/mentor-questions", "external": false }]
+        }
+      ]
+    },
+    {
+      "id": "junior",
+      "label": "Junior",
+      "summary": "Apply for internships and deepen your professional network.",
+      "steps": [
+        {
+          "title": "Apply to internships on Handshake",
+          "detail": "Filter by your major and target location — apply early in fall and spring cycles.",
+          "links": [{ "label": "Handshake jobs", "url": "https://career.missouri.edu/jobs-and-internships/handshake/", "external": true }]
+        },
+        {
+          "title": "Schedule a mentor conversation",
+          "detail": "Ask about day-to-day work, skills that matter, and how they got their first role.",
+          "links": [{ "label": "Mizzou Mentoring", "url": "https://mizzou.xinspire.com/programs/mizzou", "external": true }]
+        },
+        {
+          "title": "Practice interviews",
+          "detail": "Use Big Interview or book a mock session through the Career Center.",
+          "links": [{ "label": "Big Interview", "url": "https://career.missouri.edu/career-preparation/interviews/", "external": true }]
+        },
+        {
+          "title": "Book a career advisor meeting",
+          "detail": "Get feedback on applications, LinkedIn, and your target industry.",
+          "links": [{ "label": "Advisor directory", "url": "/career/directory", "external": false }]
+        }
+      ]
+    },
+    {
+      "id": "senior",
+      "label": "Senior",
+      "summary": "Convert experience into full-time roles or grad school plans.",
+      "steps": [
+        {
+          "title": "Target full-time roles on Handshake",
+          "detail": "Set alerts for new postings in your field and apply with a tailored resume.",
+          "links": [{ "label": "Handshake", "url": "https://career.missouri.edu/jobs-and-internships/handshake/", "external": true }]
+        },
+        {
+          "title": "Leverage alumni mentors for referrals and advice",
+          "detail": "Ask mentors about company culture and how to stand out in final-round interviews.",
+          "links": [{ "label": "Mizzou Mentoring", "url": "https://mizzou.xinspire.com/programs/mizzou", "external": true }]
+        },
+        {
+          "title": "Confirm graduation requirements in Stellic",
+          "detail": "Make sure your final-semester plan matches degree audit requirements.",
+          "links": [{ "label": "Stellic", "url": "https://stellic.missouri.edu", "external": true }]
+        },
+        {
+          "title": "Explore grad school if that's your goal",
+          "detail": "Meet with advisors about timelines, GRE requirements, and recommendation letters.",
+          "links": [{ "label": "Academic Advising", "url": "https://advising.missouri.edu/", "external": true }]
+        }
+      ]
+    }
+  ]
+}

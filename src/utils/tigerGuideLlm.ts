@@ -5,6 +5,7 @@ import {
   type GuideResponse,
   type GuideTopic,
 } from './tigerGuide'
+import { getCareerProfileSummary } from './careerProfile'
 
 const STORAGE_KEY = 'tiger_guide_gemini_key'
 const DEFAULT_MODEL = 'gemini-2.0-flash'
@@ -123,11 +124,13 @@ function parseLlmResponse(raw: string, query: string): GuideResponse {
 export type ChatTurn = { role: 'user' | 'assistant'; content: string }
 
 function buildSystemPrompt(context: string) {
+  const profileLine = getCareerProfileSummary()
+  const profileBlock = profileLine ? `\n${profileLine}\n` : ''
   return `You are Tiger Guide, a helpful copilot for University of Missouri (Mizzou) students.
 Use ONLY the knowledge topics below. Do not invent Mizzou policies, deadlines, phone numbers, or URLs.
 If the question is outside the knowledge base, say you are not sure and recommend contacting an advisor or the relevant Mizzou office.
 Always be concise, friendly, and practical.
-
+${profileBlock}
 Respond with valid JSON only (no markdown fences), in this shape:
 {
   "title": "short heading",

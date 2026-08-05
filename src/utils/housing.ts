@@ -102,3 +102,95 @@ export function googleMapsWalkUrl(from: { lat: number; lng: number }, to = CAMPU
 export function sortByWalkTime(items: HousingWithCommute[]) {
   return [...items].sort((a, b) => a.walkMinutes - b.walkMinutes)
 }
+
+export function parseRentRange(rent: string): { min: number | null; max: number | null } {
+  if (/ask/i.test(rent)) return { min: null, max: null }
+  const nums = rent.match(/[\d,]+/g)?.map(s => parseInt(s.replace(/,/g, ''), 10)) ?? []
+  if (!nums.length) return { min: null, max: null }
+  if (nums.length === 1) return { min: nums[0], max: nums[0] }
+  return { min: nums[0], max: nums[1] }
+}
+
+export function parseMinBeds(beds: string): number {
+  if (/studio/i.test(beds)) return 0
+  const m = beds.match(/(\d+)/)
+  return m ? parseInt(m[1], 10) : 1
+}
+
+export type HousingFilterOptions = {
+  neighborhood?: string
+  maxRent?: number | null
+  minBeds?: number | null
+  maxWalk?: number | null
+  favoritesOnly?: boolean
+  favoriteIds?: Set<number>
+}
+
+export function filterHousingAdvanced(
+  items: HousingWithCommute[],
+  options: HousingFilterOptions = {}
+) {
+  const {
+    neighborhood,
+    maxRent,
+    minBeds,
+    maxWalk,
+    favoritesOnly,
+    favoriteIds,
+  } = options
+
+  return items.filter(h => {
+    if (neighborhood && neighborhood !== 'All Columbia' && h.neighborhood !== neighborhood) {
+      return false
+    }
+    if (maxWalk != null && maxWalk > 0 && h.walkMinutes > maxWalk) return false
+    if (minBeds != null && minBeds > 0 && parseMinBeds(h.beds) < minBeds) return false
+    if (maxRent != null && maxRent > 0) {
+      const { min } = parseRentRange(h.rent)
+      if (min != null && min > maxRent) return false
+    }
+    if (favoritesOnly && favoriteIds && !favoriteIds.has(h.id)) return false
+    return true
+  })
+}
+
+export type HousingMapParams = {
+  maxRent?: number
+  minBeds?: number
+  maxWalk?: number
+  neighborhood?: string
+  favorites?: boolean
+}
+
+export function buildHousingMapUrl(params: HousingMapParams = {}) {
+  const sp = new URLSearchParams()
+  sp.set('housing', '1')
+  sp.set('tab', 'housing')
+  if (params.maxRent) sp.set('maxRent', String(params.maxRent))
+  if (params.minBeds) sp.set('minBeds', String(params.minBeds))
+  if (params.maxWalk) sp.set('maxWalk', String(params.maxWalk))
+  if (params.neighborhood && params.neighborhood !== 'All Columbia') {
+    sp.set('neighborhood', params.neighborhood)
+  }
+  if (params.favorites) sp.set('favorites', '1')
+  return `/map?${sp.toString()}`
+}
+
+export function parseHousingMapSearch(search: string): HousingMapParams & { housing?: boolean; tab?: string } {
+  const sp = new URLSearchParams(search.startsWith('?') ? search.slice(1) : search)
+  const num = (key: string) => {
+    const v = sp.get(key)
+    if (!v) return undefined
+    const n = parseInt(v, 10)
+    return Number.isFinite(n) ? n : undefined
+  }
+  return {
+    housing: sp.get('housing') === '1',
+    tab: sp.get('tab') ?? undefined,
+    maxRent: num('maxRent'),
+    minBeds: num('minBeds'),
+    maxWalk: num('maxWalk'),
+    neighborhood: sp.get('neighborhood') ?? undefined,
+    favorites: sp.get('favorites') === '1',
+  }
+}

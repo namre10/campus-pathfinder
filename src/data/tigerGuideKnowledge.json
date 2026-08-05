@@ -131,7 +131,7 @@
       ],
       "links": [
         { "label": "Off-Campus Housing Marketplace", "url": "https://offcampus.missouri.edu/", "external": true },
-        { "label": "Pathfinder Columbia map", "url": "/map", "external": false }
+        { "label": "Pathfinder map (≤15 min walk)", "url": "/map?housing=1&tab=housing&maxWalk=15", "external": false }
       ]
     },
     {
