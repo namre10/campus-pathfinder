@@ -12,7 +12,7 @@ import {
 } from '../../utils/careerProfile'
 import { buildMentorQuestions } from '../../utils/mentorQuestions'
 
-const MENTORING_URL = 'https://mizzou.xinspire.com/programs/mizzou'
+const MENTORING_URL = 'https://www.mizzou.com/mentoring'
 
 export default function MentorQuestionBuilder() {
   const stored = getCareerProfile()

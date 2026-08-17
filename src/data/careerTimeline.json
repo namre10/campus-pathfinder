@@ -13,7 +13,7 @@
         {
           "title": "Join a club related to your field",
           "detail": "Employers notice early involvement — check MU Engage for student orgs.",
-          "links": [{ "label": "MU Engage", "url": "https://engage.missouri.edu/", "external": true }]
+          "links": [{ "label": "MU Engage", "url": "https://engage.missouri.edu/home_login", "external": true }]
         },
         {
           "title": "Create a draft Handshake profile",
@@ -35,12 +35,12 @@
         {
           "title": "Attend a career fair or employer info session",
           "detail": "RSVP on Handshake — even listening sessions teach you what companies want.",
-          "links": [{ "label": "Career fairs", "url": "https://career.missouri.edu/events/", "external": true }]
+          "links": [{ "label": "Career fairs", "url": "https://career.missouri.edu/jobs-and-internships/career-fairs/", "external": true }]
         },
         {
           "title": "Browse alumni mentors in your field",
           "detail": "Mizzou Mentoring lets you choose someone aligned with your goals — start with one conversation.",
-          "links": [{ "label": "Mizzou Mentoring", "url": "https://mizzou.xinspire.com/programs/mizzou", "external": true }]
+          "links": [{ "label": "Mizzou Mentoring", "url": "https://www.mizzou.com/mentoring", "external": true }]
         },
         {
           "title": "Use Tiger Guide mentor question builder",
@@ -62,7 +62,7 @@
         {
           "title": "Schedule a mentor conversation",
           "detail": "Ask about day-to-day work, skills that matter, and how they got their first role.",
-          "links": [{ "label": "Mizzou Mentoring", "url": "https://mizzou.xinspire.com/programs/mizzou", "external": true }]
+          "links": [{ "label": "Mizzou Mentoring", "url": "https://www.mizzou.com/mentoring", "external": true }]
         },
         {
           "title": "Practice interviews",
@@ -89,7 +89,7 @@
         {
           "title": "Leverage alumni mentors for referrals and advice",
           "detail": "Ask mentors about company culture and how to stand out in final-round interviews.",
-          "links": [{ "label": "Mizzou Mentoring", "url": "https://mizzou.xinspire.com/programs/mizzou", "external": true }]
+          "links": [{ "label": "Mizzou Mentoring", "url": "https://www.mizzou.com/mentoring", "external": true }]
         },
         {
           "title": "Confirm graduation requirements in Stellic",
