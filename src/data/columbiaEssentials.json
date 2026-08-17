@@ -1,0 +1,152 @@
+{
+  "intro": "New to Columbia? This walkthrough orders the official steps for a Social Security number and Missouri ID — so you know what to do before you visit an office.",
+  "disclaimer": "Rules differ for international vs. domestic students. Always confirm with ISSS or the office listed on each step before you go.",
+  "phases": [
+    {
+      "id": "before",
+      "label": "Before you start",
+      "summary": "Gather immigration documents and check whether you need ISSS signatures first.",
+      "steps": [
+        {
+          "title": "Read the official ISSS identification guide",
+          "detail": "Mizzou's International Student & Scholar Services explains SSN and Missouri license requirements, office addresses, and which forms you need.",
+          "links": [
+            {
+              "label": "ISSS identification documents",
+              "url": "https://international.missouri.edu/isss/living-in-columbia/identification-documents/",
+              "external": true
+            },
+            {
+              "label": "International Center",
+              "url": "https://international.missouri.edu",
+              "external": true
+            }
+          ]
+        },
+        {
+          "title": "Collect your core documents",
+          "detail": "Keep your passport, visa, I-94, and I-20 or DS-2019 accessible. You will need them for both SSN and license appointments.",
+          "links": []
+        },
+        {
+          "title": "Contact ISSS if you're unsure",
+          "detail": "If you are not employed, on OPT, or unsure which ID you need, ask an international adviser before visiting SSA or the license office.",
+          "links": [
+            {
+              "label": "ISSS walk-in advising",
+              "url": "https://international.missouri.edu/isss/advising/walkin-advising/",
+              "external": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ssn",
+      "label": "Social Security Number (SSN)",
+      "summary": "Required for most employed students. International students must have a job offer and wait two weeks after U.S. entry.",
+      "steps": [
+        {
+          "title": "Confirm you have a job offer",
+          "detail": "International students can only apply for an SSN if they are authorized to work (on-campus job, CPT, etc.). No job offer means no SSN application yet.",
+          "links": []
+        },
+        {
+          "title": "Wait two full weeks after entering the U.S.",
+          "detail": "SSA will not process your application until at least 14 days after your most recent U.S. entry date on your I-94.",
+          "links": []
+        },
+        {
+          "title": "Get an employment verification letter",
+          "detail": "Request the letter through myStatus. Your employer signs it, then bring it to ISSS for their signature before visiting SSA.",
+          "links": [
+            {
+              "label": "ISSS SSN instructions",
+              "url": "https://international.missouri.edu/isss/living-in-columbia/identification-documents/",
+              "external": true
+            }
+          ]
+        },
+        {
+          "title": "Visit the Columbia Social Security office",
+          "detail": "Bring your signed employment letter, passport, I-94, and I-20/DS-2019 to 3402 Buttonwood Drive, Columbia.",
+          "links": [
+            {
+              "label": "SSA office (Buttonwood Dr)",
+              "url": "https://www.google.com/maps/search/?api=1&query=3402+Buttonwood+Drive+Columbia+MO",
+              "external": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "license",
+      "label": "Missouri driver's license or nondriver ID",
+      "summary": "Need to drive or want a state photo ID? Missouri requires tests plus documents from ISSS and possibly SSA.",
+      "steps": [
+        {
+          "title": "Request a letter of good standing (international students)",
+          "detail": "Use myStatus to request the letter ISSS provides for the license office. Domestic students can skip this ISSS step.",
+          "links": [
+            {
+              "label": "ISSS license instructions",
+              "url": "https://international.missouri.edu/isss/living-in-columbia/identification-documents/",
+              "external": true
+            }
+          ]
+        },
+        {
+          "title": "Get a letter of ineligibility if you have no SSN",
+          "detail": "Missouri requires either your SSN or an SSA letter stating you are not eligible for one yet. Visit the Buttonwood Dr SSA office if needed.",
+          "links": []
+        },
+        {
+          "title": "Pass vision, road sign, and written tests",
+          "detail": "Schedule and complete testing with the Missouri State Highway Patrol before applying at the license office.",
+          "links": [
+            {
+              "label": "Missouri DOR — non-U.S. citizen requirements",
+              "url": "https://dor.mo.gov/pdf/idrequirements.pdf",
+              "external": true
+            }
+          ]
+        },
+        {
+          "title": "Apply at the Columbia License Office",
+          "detail": "Bring all immigration documents, your test results, and SSN or ineligibility letter to 403 Vandiver Drive. Nondriver ID uses the same office if you will not drive.",
+          "links": [
+            {
+              "label": "License office (Vandiver Dr)",
+              "url": "https://www.google.com/maps/search/?api=1&query=403+Vandiver+Drive+Columbia+MO",
+              "external": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transit",
+      "label": "Getting around without a car",
+      "summary": "While you settle in, use Mizzou's shuttle and Columbia's public buses to reach campus and downtown.",
+      "steps": [
+        {
+          "title": "Track Tiger Line and Go COMO buses live",
+          "detail": "Download the ETA Transit app or use Go COMO's website for real-time bus locations. Tiger Line loops campus seven days a week during the semester.",
+          "links": [
+            {
+              "label": "Go COMO live routes",
+              "url": "https://www.gocomotransit.com",
+              "external": true
+            },
+            {
+              "label": "Tiger Line shuttle",
+              "url": "https://parking.missouri.edu/tiger-line-shuttle/",
+              "external": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

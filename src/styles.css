@@ -2405,6 +2405,30 @@ body {
   gap: 8px;
 }
 
+.essentials-disclaimer {
+  border-left: 3px solid var(--accent, #f1b82d);
+}
+
+.essentials-phase-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-right: 8px;
+  border-radius: 999px;
+  background: var(--accent, #f1b82d);
+  color: #1a1a1a;
+  font-size: 0.85rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.essentials-walkthrough .career-timeline-year-head h3 {
+  display: flex;
+  align-items: center;
+}
+
 .mentor-builder-grid {
   display: grid;
   grid-template-columns: minmax(220px, 1fr) minmax(280px, 1.4fr);

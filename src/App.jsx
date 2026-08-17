@@ -26,6 +26,7 @@ import EventDirectory from './components/events/EventDirectory'
 import EventDetail from './components/events/EventDetail'
 import PathfinderHome from './components/home/PathfinderHome'
 import MizzouToolsHub from './components/tools/MizzouToolsHub'
+import ColumbiaEssentialsWalkthrough from './components/essentials/ColumbiaEssentialsWalkthrough'
 import { useToast } from './context/ToastContext'
 import eventsData from './data/events'
 import locationsData from './data/locations.json'
@@ -405,6 +406,7 @@ export default function App() {
             <Routes>
             <Route path="/" element={<PathfinderHome />} />
             <Route path="/tools" element={<MizzouToolsHub />} />
+            <Route path="/essentials/ssn-license" element={<ColumbiaEssentialsWalkthrough />} />
             <Route path="/map" element={
               <div className="map-layout">
                 <MapView {...mapViewProps} />

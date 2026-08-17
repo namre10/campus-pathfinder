@@ -69,13 +69,25 @@
     },
     {
       "id": "campus",
-      "label": "Campus life & maps",
+      "label": "Campus life, transit & maps",
       "tools": [
         {
           "name": "Official campus map",
           "description": "Mizzou's official interactive map — buildings, parking, accessibility.",
           "url": "https://map.missouri.edu",
           "icon": "🗺️"
+        },
+        {
+          "name": "Go COMO (bus tracker)",
+          "description": "Live Columbia bus locations and routes — use the ETA Transit app or website.",
+          "url": "https://www.gocomotransit.com",
+          "icon": "🚌"
+        },
+        {
+          "name": "Tiger Line shuttle",
+          "description": "Mizzou's campus shuttle loops — routes, hours, and live tracking info.",
+          "url": "https://parking.missouri.edu/tiger-line-shuttle/",
+          "icon": "🐯"
         },
         {
           "name": "Off-campus housing",
@@ -97,9 +109,27 @@
         },
         {
           "name": "Parking & Transportation",
-          "description": "Permits, parking maps, and Tiger Line shuttle routes.",
+          "description": "Permits, parking maps, and transportation services.",
           "url": "https://parking.missouri.edu",
-          "icon": "🚌"
+          "icon": "🅿️"
+        }
+      ]
+    },
+    {
+      "id": "new-to-columbia",
+      "label": "New to Columbia & ID",
+      "tools": [
+        {
+          "name": "SSN & Missouri ID guide (ISSS)",
+          "description": "Official steps for Social Security, driver's license, and nondriver ID in Columbia.",
+          "url": "https://international.missouri.edu/isss/living-in-columbia/identification-documents/",
+          "icon": "🪪"
+        },
+        {
+          "name": "International Student Services",
+          "description": "ISSS advising, myStatus letters, and new-student check-in resources.",
+          "url": "https://international.missouri.edu",
+          "icon": "🌍"
         }
       ]
     },
@@ -161,6 +191,13 @@
       "description": "Generate questions before Mizzou Mentoring conversations.",
       "url": "/career/mentor-questions",
       "icon": "💬",
+      "internal": true
+    },
+    {
+      "name": "SSN & Missouri ID walkthrough",
+      "description": "Step-by-step guide for Social Security, license, and getting around Columbia.",
+      "url": "/essentials/ssn-license",
+      "icon": "🪪",
       "internal": true
     }
   ]

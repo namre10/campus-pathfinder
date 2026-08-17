@@ -176,6 +176,7 @@ export default function TigerGuideChat({
 
         <div className="tiger-guide-career-links">
           <Link to="/tools" className="btn compact">All Mizzou tools</Link>
+          <Link to="/essentials/ssn-license" className="btn compact">SSN & license guide</Link>
           <Link to="/career/timeline" className="btn compact">Career timeline</Link>
           <Link to="/career/mentor-questions" className="btn compact">Mentor questions</Link>
         </div>

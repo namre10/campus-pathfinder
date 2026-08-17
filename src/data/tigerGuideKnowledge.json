@@ -163,10 +163,63 @@
       "links": [
         { "label": "Required tasks (MizzouOne)", "url": "https://mizzouone.missouri.edu/collection/all/required-tasks-for-mizzou-students", "external": true }
       ]
+    },
+    {
+      "id": "ssn-columbia",
+      "keywords": ["ssn", "social security", "social security number", "social security card", "buttonwood", "employment letter"],
+      "title": "Getting a Social Security Number in Columbia",
+      "answer": "International students at Mizzou need a job offer to apply for an SSN. Wait at least two weeks after entering the U.S., get an employment verification letter signed by your employer and ISSS, then visit the Columbia SSA office.",
+      "steps": [
+        "Confirm you have authorized employment (on-campus job, CPT, etc.).",
+        "Wait two full weeks after your U.S. entry date on your I-94.",
+        "Request an employment verification letter through myStatus; employer and ISSS must sign.",
+        "Bring the signed letter, passport, I-94, and I-20/DS-2019 to 3402 Buttonwood Drive.",
+        "Use our SSN & license walkthrough for the full ordered checklist."
+      ],
+      "links": [
+        { "label": "ISSS identification guide", "url": "https://international.missouri.edu/isss/living-in-columbia/identification-documents/", "external": true },
+        { "label": "SSN & license walkthrough", "url": "/essentials/ssn-license", "external": false },
+        { "label": "International Center", "url": "https://international.missouri.edu", "external": true }
+      ]
+    },
+    {
+      "id": "missouri-license",
+      "keywords": ["driver license", "driver's license", "drivers license", "dmv", "license office", "vandiver", "nondriver id", "state id", "missouri id", "driving test"],
+      "title": "Missouri driver's license or nondriver ID",
+      "answer": "To drive in Missouri you need a state license from the Columbia License Office. International students also need ISSS documents and may need an SSA ineligibility letter if they do not have an SSN yet.",
+      "steps": [
+        "Request a letter of good standing through myStatus (international students).",
+        "If you have no SSN, get a letter of ineligibility from the Social Security office first.",
+        "Pass vision, road sign, and written tests with the Missouri State Highway Patrol.",
+        "Apply at the Columbia License Office, 403 Vandiver Drive, with all immigration documents.",
+        "Not driving? You can apply for a nondriver ID at the same office with the same documents."
+      ],
+      "links": [
+        { "label": "ISSS license instructions", "url": "https://international.missouri.edu/isss/living-in-columbia/identification-documents/", "external": true },
+        { "label": "SSN & license walkthrough", "url": "/essentials/ssn-license", "external": false },
+        { "label": "Missouri DOR document list", "url": "https://dor.mo.gov/pdf/idrequirements.pdf", "external": true }
+      ]
+    },
+    {
+      "id": "bus-transit",
+      "keywords": ["bus", "como", "go como", "tiger line", "shuttle", "transit", "eta", "public transportation", "get around columbia"],
+      "title": "Buses and getting around Columbia",
+      "answer": "Columbia's Go COMO buses and Mizzou's Tiger Line shuttle both support live tracking. Download the ETA Transit app or use Go COMO's website to see when your bus arrives.",
+      "steps": [
+        "For campus loops, check Tiger Line routes and hours on Mizzou Parking & Transportation.",
+        "For city routes, use Go COMO's live map or the ETA Transit app (Apple/Google Play).",
+        "Enable push notifications in ETA Transit for delay and detour alerts.",
+        "Plan housing with commute time — Pathfinder's housing map shows walk minutes to campus."
+      ],
+      "links": [
+        { "label": "Go COMO live routes", "url": "https://www.gocomotransit.com", "external": true },
+        { "label": "Tiger Line shuttle", "url": "https://parking.missouri.edu/tiger-line-shuttle/", "external": true },
+        { "label": "Housing + commute map", "url": "/map?housing=1&tab=housing", "external": false }
+      ]
     }
   ],
   "fallback": {
-    "answer": "I'm Tiger Guide — a Mizzou prototype copilot. I work best with questions about holds, registration, Stellic, jobs, alumni mentoring, and housing. For anything official, always confirm with an advisor or the relevant Mizzou office.",
+    "answer": "I'm Tiger Guide — a Mizzou prototype copilot. I work best with questions about holds, registration, Stellic, jobs, alumni mentoring, housing, SSN/license steps, and Columbia buses. For anything official, always confirm with an advisor or the relevant Mizzou office.",
     "links": [
       { "label": "MizzouOne", "url": "https://mizzouone.missouri.edu/", "external": true },
       { "label": "Stellic", "url": "https://stellic.missouri.edu", "external": true },
@@ -177,8 +230,8 @@
   "suggestedPrompts": [
     "I have a financial hold and registration is coming up",
     "Why can't I register for CS 2270?",
-    "How do I talk to an alumni mentor?",
+    "How do I get a Social Security number in Columbia?",
     "Where do I find internships?",
-    "Help me prepare for registration in Stellic"
+    "How do I track Go COMO or Tiger Line buses?"
   ]
 }
