@@ -1,0 +1,167 @@
+{
+  "intro": "Mizzou has strong tools — each in its own place. Tiger Guide helps you ask questions; this page is your quick link directory to every official app.",
+  "categories": [
+    {
+      "id": "academic",
+      "label": "Academic & registration",
+      "tools": [
+        {
+          "name": "Stellic",
+          "description": "Degree planning, course schedules, prerequisites, and graduation requirements.",
+          "url": "https://stellic.missouri.edu",
+          "icon": "📚"
+        },
+        {
+          "name": "myZou",
+          "description": "Register for classes, view enrollment, student account, and official records.",
+          "url": "https://myzou.missouri.edu",
+          "icon": "🎓"
+        },
+        {
+          "name": "MizzouOne",
+          "description": "Student task hub — holds, required to-dos, and quick links to campus services.",
+          "url": "https://mizzouone.missouri.edu",
+          "icon": "✅"
+        },
+        {
+          "name": "Academic Advising",
+          "description": "Find your advisor, scheduling help, and college-specific advising resources.",
+          "url": "https://advising.missouri.edu",
+          "icon": "👩‍🏫"
+        },
+        {
+          "name": "Registrar",
+          "description": "Enrollment appointments, academic calendar, and registration policies.",
+          "url": "https://registrar.missouri.edu",
+          "icon": "📋"
+        }
+      ]
+    },
+    {
+      "id": "career",
+      "label": "College to career",
+      "tools": [
+        {
+          "name": "Handshake",
+          "description": "Jobs, internships, career fairs, and employer events for Mizzou students.",
+          "url": "https://career.missouri.edu/jobs-and-internships/handshake/",
+          "icon": "💼"
+        },
+        {
+          "name": "MU Career Center",
+          "description": "Resume help, interview prep, and career advising resources.",
+          "url": "https://career.missouri.edu",
+          "icon": "🎯"
+        },
+        {
+          "name": "Mizzou Mentoring",
+          "description": "Browse alumni mentors and request conversations in your field.",
+          "url": "https://mizzou.xinspire.com/programs/mizzou",
+          "icon": "🤝"
+        },
+        {
+          "name": "Big Interview",
+          "description": "Mock interview practice through the Career Center.",
+          "url": "https://career.missouri.edu/career-preparation/interviews/",
+          "icon": "🎤"
+        }
+      ]
+    },
+    {
+      "id": "campus",
+      "label": "Campus life & maps",
+      "tools": [
+        {
+          "name": "Official campus map",
+          "description": "Mizzou's official interactive map — buildings, parking, accessibility.",
+          "url": "https://map.missouri.edu",
+          "icon": "🗺️"
+        },
+        {
+          "name": "Off-campus housing",
+          "description": "Official Mizzou marketplace for Columbia rentals and commute info.",
+          "url": "https://offcampus.missouri.edu",
+          "icon": "🏠"
+        },
+        {
+          "name": "MU Engage",
+          "description": "Student organizations, events, and campus involvement.",
+          "url": "https://engage.missouri.edu",
+          "icon": "🎉"
+        },
+        {
+          "name": "Campus dining",
+          "description": "Dining locations, hours, and meal plan information.",
+          "url": "https://dining.missouri.edu",
+          "icon": "🍽️"
+        },
+        {
+          "name": "Parking & Transportation",
+          "description": "Permits, parking maps, and Tiger Line shuttle routes.",
+          "url": "https://parking.missouri.edu",
+          "icon": "🚌"
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "label": "Money, health & support",
+      "tools": [
+        {
+          "name": "Cashiers / Student Account",
+          "description": "Pay bills, payment plans, and financial hold questions.",
+          "url": "https://cashiers.missouri.edu",
+          "icon": "💳"
+        },
+        {
+          "name": "Financial Aid",
+          "description": "FAFSA, scholarships, and aid eligibility.",
+          "url": "https://financialaid.missouri.edu",
+          "icon": "💰"
+        },
+        {
+          "name": "Student Health & Well-Being",
+          "description": "Health center, counseling, and wellness resources.",
+          "url": "https://studenthealth.missouri.edu",
+          "icon": "🏥"
+        },
+        {
+          "name": "IT Help & Email",
+          "description": "Mizzou email, Wi‑Fi, and technology support.",
+          "url": "https://doit.missouri.edu",
+          "icon": "💻"
+        }
+      ]
+    }
+  ],
+  "pathfinderTools": [
+    {
+      "name": "Tiger Guide (Home)",
+      "description": "Ask questions — holds, registration, careers, housing — in one chat.",
+      "url": "/",
+      "icon": "🐯",
+      "internal": true
+    },
+    {
+      "name": "Campus + housing map",
+      "description": "Pathfinder map with campus POIs and Columbia housing filters.",
+      "url": "/map?housing=1&tab=housing",
+      "icon": "📍",
+      "internal": true
+    },
+    {
+      "name": "Career timeline",
+      "description": "Year-by-year internship and career checklist for Mizzou students.",
+      "url": "/career/timeline",
+      "icon": "🗓️",
+      "internal": true
+    },
+    {
+      "name": "Mentor question builder",
+      "description": "Generate questions before Mizzou Mentoring conversations.",
+      "url": "/career/mentor-questions",
+      "icon": "💬",
+      "internal": true
+    }
+  ]
+}

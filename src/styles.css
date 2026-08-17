@@ -2457,6 +2457,114 @@ body {
   gap: 6px;
 }
 
+/* ── Mizzou tools hub ── */
+.tools-hub-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.tools-hub-note {
+  margin: 0 0 14px !important;
+}
+
+.tools-hub-pathfinder {
+  border: 2px solid rgba(255, 182, 18, 0.45);
+  background: linear-gradient(135deg, #fffef4 0%, #fff4d0 100%);
+}
+
+.tools-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.tools-hub-card {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(219, 179, 65, 0.35);
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tools-hub-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(33, 24, 9, 0.1);
+}
+
+.tools-hub-card--pathfinder {
+  border-color: rgba(255, 182, 18, 0.55);
+  background: #fffaf0;
+}
+
+.tools-hub-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tools-hub-card strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+
+.tools-hub-card p {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.tools-hub-link-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #b45309;
+}
+
+.tools-hub-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tools-hub-search {
+  width: 100%;
+  max-width: 420px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.tools-hub-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tools-hub-category {
+  margin-bottom: 24px;
+}
+
+.tools-hub-category h3 {
+  margin-bottom: 12px;
+}
+
+.tools-hub-footer-note {
+  margin-top: 8px;
+}
+
+.tools-hub-footer-note p {
+  margin: 0;
+}
+
 .tiger-guide-career-links .btn {
   justify-content: center;
 }

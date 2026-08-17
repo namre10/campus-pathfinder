@@ -4,6 +4,7 @@ import { welcomeNavState } from '../utils/welcomeNav'
 
 const NAV_ITEMS = [
   { path: '/', label: 'Home', exact: true },
+  { path: '/tools', label: 'Mizzou tools', exact: true },
   { path: '/map', label: 'Map', exact: true },
   { path: '/events', label: 'Events' },
   { path: '/community', label: 'Community' },

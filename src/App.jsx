@@ -25,6 +25,7 @@ import MyCommunities from './components/community/MyCommunities'
 import EventDirectory from './components/events/EventDirectory'
 import EventDetail from './components/events/EventDetail'
 import PathfinderHome from './components/home/PathfinderHome'
+import MizzouToolsHub from './components/tools/MizzouToolsHub'
 import { useToast } from './context/ToastContext'
 import eventsData from './data/events'
 import locationsData from './data/locations.json'
@@ -403,6 +404,7 @@ export default function App() {
           <div className="route-outlet">
             <Routes>
             <Route path="/" element={<PathfinderHome />} />
+            <Route path="/tools" element={<MizzouToolsHub />} />
             <Route path="/map" element={
               <div className="map-layout">
                 <MapView {...mapViewProps} />
