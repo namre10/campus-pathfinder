@@ -14,7 +14,7 @@
         {
           "name": "myZou",
           "description": "Register for classes, view enrollment, student account, and official records.",
-          "url": "https://myzou.missouri.edu",
+          "url": "https://myzou.missouri.edu/psp/csprd/?&cmd=login",
           "icon": "🎓"
         },
         {
@@ -122,7 +122,7 @@
         {
           "name": "Student Health & Well-Being",
           "description": "Health center, counseling, and wellness resources.",
-          "url": "https://studenthealth.missouri.edu",
+          "url": "https://wellbeing.missouri.edu",
           "icon": "🏥"
         },
         {

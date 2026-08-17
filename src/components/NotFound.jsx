@@ -12,7 +12,8 @@ export default function NotFound() {
           breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Not found' }]}
           actions={
             <>
-              <Link to="/" className="btn primary">Your week</Link>
+              <Link to="/" className="btn primary">Tiger Guide</Link>
+              <Link to="/tools" className="btn">Mizzou tools</Link>
               <Link to="/map" className="btn">Campus map</Link>
             </>
           }
