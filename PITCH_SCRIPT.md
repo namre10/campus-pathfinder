@@ -1,7 +1,7 @@
 # Campus Pathfinder — 2-Minute Pitch Script
 
 **Category:** College to Career  
-**Live demo:** https://namre10.github.io/campus-pathfinder/  
+**Live demo:** https://namre10.github.io/campus-pathfinder/#/
 **Present:** Open `pitch-deck.html` in browser (fullscreen with `F` key)
 
 ---
@@ -38,7 +38,7 @@
 **Visual:** 3 feature cards
 
 **Say:**
-> "Three things make this real: **Tiger Guide AI** for holds, registration, jobs, and housing. A **College to Career roadmap** — year-by-year timeline plus a mentor question builder for Mizzou Mentoring. And a **Columbia housing map** where students filter, save, and compare apartments. All frontend, all demo-ready today."
+> "Six modules make this real: **Tiger Guide AI** — Gemini plus a Mizzou knowledge base. A **Tools Hub** with 22 official links students actually need. A **Career bundle** — timeline, profile, mentor questions. A **Housing map** with filters, save, and compare. **Welcome intents** so new users pick a goal on day one. And **Columbia essentials** — SSN, license, and Go COMO buses. Plus Events, Community, and campus map — all frontend, demo-ready today."
 
 ---
 
@@ -88,7 +88,7 @@
 | 1 | One question. Every Mizzou tool. | Campus Pathfinder · Tiger Guide · College to Career |
 | 2 | Mizzou has the tools. Students don't have the map. | Stellic · Handshake · MizzouOne · Housing — scattered |
 | 3 | Tiger Guide is the front door. | Ask → Explain → Open the right tool |
-| 4 | What we built | AI copilot · Career roadmap · Housing map |
+| 4 | What we built | AI copilot · Tools hub · Career bundle · Housing map · Welcome intents · Columbia essentials |
 | 5 | We connect — we don't replace | Not another portal · Conversation → official links |
 | 6 | Try it live | namre10.github.io/campus-pathfinder |
 | 7 | Thank you | Many portals → One guide → Right action |

@@ -4,6 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Campus Pathfinder — Tiger Guide</title>
+    <script>
+      (function () {
+        var hash = window.location.hash;
+        if (!hash || hash === '#') {
+          var path = window.location.pathname;
+          if (!path.endsWith('/')) path += '/';
+          window.history.replaceState(null, '', path + window.location.search + '#/');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

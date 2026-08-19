@@ -36,8 +36,13 @@
     .slide--gold .tag { border-color: rgba(26,20,8,0.3); color: #1a1408; background: rgba(255,255,255,0.35); }
 
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 960px; width: 100%; margin-top: 8px; }
+    .grid-6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 980px; width: 100%; margin-top: 8px; }
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 880px; width: 100%; }
     .card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,182,18,0.25); border-radius: 16px; padding: 24px 20px; text-align: left; }
+    .grid-6 .card { padding: 18px 16px; }
+    .grid-6 .card-icon { font-size: 1.6rem; margin-bottom: 8px; }
+    .grid-6 .card strong { font-size: 0.95rem; }
+    .grid-6 .card p { font-size: 0.8rem; }
     .slide--gold .card { background: rgba(255,255,255,0.55); border-color: rgba(26,20,8,0.15); }
     .card-icon { font-size: 2rem; margin-bottom: 10px; }
     .card strong { display: block; font-size: 1.05rem; margin-bottom: 6px; }
@@ -62,6 +67,7 @@
     @media (max-width: 768px) {
       .slide { padding: 32px 24px; }
       .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .grid-6 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -101,23 +107,39 @@
     </section>
 
     <!-- SLIDE 4: DEMO FEATURES -->
-    <section class="slide slide--dark" data-note="~20 sec">
+    <section class="slide slide--dark" data-note="~25 sec">
       <h2>What we built</h2>
-      <div class="grid-3">
+      <p class="subtitle" style="margin-top: -8px; margin-bottom: 12px; font-size: 0.95rem;">Six modules — one student-facing layer on top of Mizzou&apos;s official tools.</p>
+      <div class="grid-6">
         <div class="card">
           <div class="card-icon">💬</div>
           <strong>Tiger Guide AI</strong>
-          <p>Holds, registration, jobs, housing — plain English + official links.</p>
+          <p>Gemini copilot + Mizzou knowledge base — holds, registration, jobs, housing, SSN, buses.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔗</div>
+          <strong>Mizzou Tools Hub</strong>
+          <p>22+ official links in one searchable directory — Stellic, Handshake, Go COMO, ISSS, and more.</p>
         </div>
         <div class="card">
           <div class="card-icon">🗓️</div>
-          <strong>Career roadmap</strong>
-          <p>Year-by-year timeline + mentor question builder for Handshake &amp; Mizzou Mentoring.</p>
+          <strong>Career bundle</strong>
+          <p>Year-by-year timeline, career profile, mentor question builder, advisor booking (prototype).</p>
         </div>
         <div class="card">
           <div class="card-icon">🏠</div>
           <strong>Housing map</strong>
-          <p>Filter, save, and compare Columbia apartments near campus.</p>
+          <p>Filter by rent, beds, and walk time — save ♥, compare ⇄, chat deep-links to the map.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <strong>Welcome &amp; intents</strong>
+          <p>Animated onboarding — pick a goal (holds, classes, housing, jobs) and land in the right flow.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🪪</div>
+          <strong>Columbia essentials</strong>
+          <p>SSN &amp; Missouri ID walkthrough, Go COMO bus tracker, Tiger Line shuttle links.</p>
         </div>
       </div>
     </section>
@@ -141,7 +163,7 @@
     <section class="slide slide--gold" data-note="~15 sec">
       <h2>Try it live</h2>
       <p class="subtitle">Ask Tiger Guide: <strong>&ldquo;How do I find internships?&rdquo;</strong><br>Then show Career Timeline + Mentor Questions.</p>
-      <div class="url">namre10.github.io/campus-pathfinder</div>
+      <div class="url">namre10.github.io/campus-pathfinder/#/</div>
     </section>
 
     <!-- SLIDE 7: CLOSE -->

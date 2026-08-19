@@ -32,6 +32,7 @@ import eventsData from './data/events'
 import locationsData from './data/locations.json'
 import { getAllHousing, filterHousingByNeighborhood, filterHousingAdvanced, getHousingNeighborhoods, parseHousingMapSearch, COLUMBIA_CENTER } from './utils/housing'
 import { getHousingFavorites, toggleHousingFavorite as toggleHousingFavoriteStorage } from './utils/housingFavorites'
+import { ensureHashRouterUrl } from './utils/hashUrl'
 
 const FAVORITES_KEY = 'campus_pathfinder_favorites'
 const TIPS_KEY = 'campus_pathfinder_tips'
@@ -83,6 +84,10 @@ export default function App() {
   const onMap = isMapRoute(location.pathname)
   const showSidebar = isSidebarRoute(location.pathname)
   const routeActive = Boolean(routeGeojson)
+
+  useEffect(() => {
+    ensureHashRouterUrl(location.pathname)
+  }, [location.pathname, location.search])
 
   useEffect(() => {
     setLocations(locationsData)
