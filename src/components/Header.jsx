@@ -57,12 +57,13 @@ export default function Header({ query, setQuery, locations = [], onSelect, show
 
   function renderNavLink(item, className = 'nav-link') {
     const active = isActive(location.pathname, item)
+    const go = item.path === '/' ? goHomeWithWelcome : () => navigate(item.path)
     return (
       <button
         key={item.path}
         type="button"
         className={`${className}${active ? ' active' : ''}`}
-        onClick={() => navigate(item.path)}
+        onClick={go}
       >
         {item.label}
       </button>
